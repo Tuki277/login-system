@@ -1,0 +1,3 @@
+{
+    "mongoURL" : "mongodb+srv://loginSystem:1234@cluster0.p5rxu.mongodb.net/<dbname>?retryWrites=true&w=majority"
+}
