@@ -12,19 +12,17 @@ const postLogin = async (req, res, next) => {
     } = req.body
 
     const findAccount = await userModels.find({ username : username, password : password})
-    // console.log('findAccount.password ', findAccount[0].username)
-
-    // console.log(req.body.username)
-
-    if (req.body.username === findAccount[0].username && req.body.password === findAccount[0].password)
-    {
-        console.log('login success')
+    try {
+        if (req.body.username === findAccount[0].username && req.body.password === findAccount[0].password)
+        {
+            console.log('login success')
+            res.send('login success')
+        }
     }
-
-    else {
+    catch {
         console.log('login fail')
+        res.send('login fail, try again')
     }
-
 }
 
 const getRegister = async (req, res, next) => {
